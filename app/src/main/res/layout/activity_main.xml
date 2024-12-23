@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".MainActivity">
+
+    <!-- ScrollView را حذف کرده و مستقیم از ConstraintLayout برای قرار دادن ویوها استفاده کنید -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Button برای انتخاب فایل -->
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="68dp"
+            android:backgroundTint="@color/color_btn"
+            android:onClick="openfilechooser"
+            android:text="انتخاب فایل"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- ImageView برای نمایش تصاویر -->
+        <ImageView
+            android:id="@+id/imgv"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <!-- VideoView برای نمایش ویدیوها -->
+        <VideoView
+            android:id="@+id/videov"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:layout_marginTop="25dp" />
+
+        <!-- دکمه Pause برای توقف موقت صوت -->
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="پاز"
+            android:onClick="pauseAudio"
+            android:backgroundTint="@color/color_btn"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            android:layout_gravity="center"/>
+
+        <!-- دکمه Resume برای ادامه پخش صوت -->
+        <Button
+            android:id="@+id/resumeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="ادامه"
+            android:visibility="invisible"
+            android:onClick="resumeAudio"
+            android:backgroundTint="@color/color_btn"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center"/>
+
+        <!-- دکمه Stop برای توقف کامل صوت -->
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="توقف"
+            android:visibility="invisible"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/color_btn"
+            android:onClick="stopAudio"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
